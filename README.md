@@ -28,7 +28,8 @@ Para clonar este repositório, siga os passos abaixo:
 ```bash
 # Clone o repositório
 git clone https://github.com/joaodorast/Site-do-Vasco.git
-
+```
+```
 # Navegue até o diretório do projeto
 cd Site-do-Vasco
 ```
