@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Visita - São Januário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        'vasco-black': '#000000',
+                        'vasco-white': '#FFFFFF',
+                        'vasco-red': '#CE1818',
+                        'vasco-gray': '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .step-active {
+            border-color: #CE1818;
+            background-color: #CE1818;
+            color: white;
+        }
+
+        .step-completed {
+            border-color: #4CAF50;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <header class="fixed w-full z-50 bg-black/90 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="/api/placeholder/50/50" alt="Vasco Logo" class="w-12">
+                    <span class="text-2xl font-black">VASCO</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="conheca-o-estadio.html" class="hover:text-vasco-red transition-colors">Voltar ao Estádio</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24 min-h-screen">
+        <div class="container mx-auto px-6 py-12">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex justify-between items-center mb-12">
+                    <div class="flex items-center w-full">
+                        <div class="relative flex flex-col items-center flex-1">
+                            <div class="w-10 h-10 rounded-full border-2 flex items-center justify-center step-active">1</div>
+                            <span class="text-sm mt-2">Data e Horário</span>
+                        </div>
+                        <div class="flex-1 h-1 bg-gray-700"></div>
+                        <div class="relative flex flex-col items-center flex-1">
+                            <div class="w-10 h-10 rounded-full border-2 border-gray-700 flex items-center justify-center">2</div>
+                            <span class="text-sm mt-2">Informações</span>
+                        </div>
+                        <div class="flex-1 h-1 bg-gray-700"></div>
+                        <div class="relative flex flex-col items-center flex-1">
+                            <div class="w-10 h-10 rounded-full border-2 border-gray-700 flex items-center justify-center">3</div>
+                            <span class="text-sm mt-2">Pagamento</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-vasco-gray rounded-xl p-8">
+                    <form id="bookingForm">
+                        <!-- Step 1 -->
+                        <div class="form-step active" id="step1">
+                            <h2 class="text-3xl font-bold mb-8">Escolha a Data e Horário</h2>
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-lg mb-2">Data da Visita</label>
+                                    <input type="date" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required min="2024-01-01">
+                                </div>
+                                <div>
+                                    <label class="block text-lg mb-2">Horário</label>
+                                    <select class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                        <option value="">Selecione um horário</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:30">11:30</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:30">15:30</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-lg mb-2">Número de Visitantes</label>
+                                    <select class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                        <option value="">Selecione a quantidade</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                    </select>
+                                </div>
+                                <div class="pt-6">
+                                    <button type="button" onclick="nextStep(1)" class="w-full bg-vasco-red text-white py-3 rounded-full font-bold hover:bg-red-700 transition-colors">
+                                        Continuar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="form-step" id="step2">
+                            <h2 class="text-3xl font-bold mb-8">Informações Pessoais</h2>
+                            <div class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-lg mb-2">Nome</label>
+                                        <input type="text" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-lg mb-2">Sobrenome</label>
+                                        <input type="text" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-lg mb-2">Email</label>
+                                    <input type="email" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                </div>
+                                <div>
+                                    <label class="block text-lg mb-2">Telefone</label>
+                                    <input type="tel" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                </div>
+                                <div>
+                                    <label class="block text-lg mb-2">CPF</label>
+                                    <input type="text" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                </div>
+                                <div class="flex space-x-4 pt-6">
+                                    <button type="button" onclick="prevStep(2)" class="w-full border border-vasco-red text-white py-3 rounded-full font-bold hover:bg-vasco-red transition-colors">
+                                        Voltar
+                                    </button>
+                                    <button type="button" onclick="nextStep(2)" class="w-full bg-vasco-red text-white py-3 rounded-full font-bold hover:bg-red-700 transition-colors">
+                                        Continuar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="form-step" id="step3">
+                            <h2 class="text-3xl font-bold mb-8">Pagamento</h2>
+                            <div class="space-y-6">
+                                <div class="bg-black p-6 rounded-lg mb-6">
+                                    <h3 class="text-xl font-bold mb-4">Resumo da Compra</h3>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span>Tour São Januário</span>
+                                            <span>R$ 60,00</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Taxa de serviço</span>
+                                            <span>R$ 5,00</span>
+                                        </div>
+                                        <div class="border-t border-gray-700 pt-2 mt-2">
+                                            <div class="flex justify-between font-bold">
+                                                <span>Total</span>
+                                                <span>R$ 65,00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-lg mb-2">Número do Cartão</label>
+                                    <input type="text" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-lg mb-2">Validade</label>
+                                        <input type="text" placeholder="MM/AA" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-lg mb-2">CVV</label>
+                                        <input type="text" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-lg mb-2">Nome no Cartão</label>
+                                    <input type="text" class="w-full bg-black border border-gray-700 rounded-lg p-3 text-white" required>
+                                </div>
+
+                                <div class="flex space-x-4 pt-6">
+                                    <button type="button" onclick="prevStep(3)" class="w-full border border-vasco-red text-white py-3 rounded-full font-bold hover:bg-vasco-red transition-colors">
+                                        Voltar
+                                    </button>
+                                    <button type="submit" class="w-full bg-vasco-red text-white py-3 rounded-full font-bold hover:bg-red-700 transition-colors">
+                                        Finalizar Compra
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-white py-6 text-center">
+        <p>&copy; 2024 Vasco da Gama. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+
+        function nextStep(step) {
+            if (step === 1) {
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+            }
+            else if (step === 2) {
+                document.getElementById('step2').classList.remove('active');
+                document.getElementById('step3').classList.add('active');
+            }
+        }
+
+        function prevStep(step) {
+            if (step === 2) {
+                document.getElementById('step2').classList.remove('active');
+                document.getElementById('step1').classList.add('active');
+            }
+            else if (step === 3) {
+                document.getElementById('step3').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

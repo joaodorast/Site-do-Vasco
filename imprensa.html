@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprensa - Vasco da Gama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        'vasco-black': '#000000',
+                        'vasco-white': '#FFFFFF',
+                        'vasco-red': '#CE1818',
+                        'vasco-gray': '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white">
+    <header class="fixed w-full z-50 bg-black/90 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html">
+                        <img src="/api/placeholder/50/50" alt="Vasco Logo" class="w-12">
+                    </a>
+                    <span class="text-2xl font-black">VASCO</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#historia" class="hover:text-vasco-red transition-colors">História</a>
+                    <a href="index.html#titulos" class="hover:text-vasco-red transition-colors">Títulos</a>
+                    <a href="index.html#estadio" class="hover:text-vasco-red transition-colors">Estádio</a>
+                    <a href="index.html#socio" class="bg-vasco-red px-6 py-2 rounded-full hover:bg-red-700 transition-colors">
+                        Seja Sócio
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24">
+       
+        <section class="bg-vasco-gray py-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-black mb-6">ASSESSORIA DE IMPRENSA</h1>
+                <p class="text-xl mb-8">Central de relacionamento com a imprensa e profissionais de comunicação</p>
+            </div>
+        </section>
+
+       
+        <section class="py-16 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-12">CONTATOS PARA IMPRENSA</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-vasco-gray p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4">Assessoria de Comunicação</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <span class="font-bold">Email:</span>
+                                <p>imprensa@vasco.com.br</p>
+                            </li>
+                            <li>
+                                <span class="font-bold">Telefone:</span>
+                                <p>(21) 2176-7373</p>
+                            </li>
+                            <li>
+                                <span class="font-bold">Horário:</span>
+                                <p>Segunda a Sexta, 9h às 18h</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-vasco-gray p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4">Credenciamento</h3>
+                        <p class="mb-6">Para solicitar credenciamento para coberturas de jogos e eventos, preencha o formulário com antecedência mínima de 48 horas.</p>
+                        <a href="solicitar.html" class="bg-vasco-red px-6 py-3 rounded-full inline-block hover:bg-red-700 transition-colors">
+                            SOLICITAR CREDENCIAMENTO
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="py-16 bg-vasco-gray">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-12">SALA DE IMPRENSA</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-black p-8 rounded-xl">
+                        <img src="/api/placeholder/400/250" alt="Press Releases" class="w-full rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-4">Press Releases</h3>
+                        <p class="mb-6">Acesse os últimos comunicados oficiais do clube para a imprensa.</p>
+                        <a href="#" class="text-vasco-red hover:underline">Ver mais →</a>
+                    </div>
+                    <div class="bg-black p-8 rounded-xl">
+                        <img src="/api/placeholder/400/250" alt="Banco de Imagens" class="w-full rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-4">Banco de Imagens</h3>
+                        <p class="mb-6">Fotos oficiais em alta resolução para uso da imprensa.</p>
+                        <a href="#" class="text-vasco-red hover:underline">Ver mais →</a>
+                    </div>
+                    <div class="bg-black p-8 rounded-xl">
+                        <img src="/api/placeholder/400/250" alt="Kit de Imprensa" class="w-full rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-4">Kit de Imprensa</h3>
+                        <p class="mb-6">Logos, manual de identidade visual e materiais institucionais.</p>
+                        <a href="#" class="text-vasco-red hover:underline">Ver mais →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+        <section class="py-16 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-12">DIRETRIZES PARA COBERTURA</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Jogos e Treinos</h3>
+                        <ul class="space-y-4 text-lg">
+                            <li>• Credenciamento obrigatório para acesso às dependências do clube</li>
+                            <li>• Respeitar as áreas designadas para imprensa</li>
+                            <li>• Agendamento prévio para entrevistas exclusivas</li>
+                            <li>• Uso de colete de identificação fornecido pelo clube</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Entrevistas</h3>
+                        <ul class="space-y-4 text-lg">
+                            <li>• Solicitações com 24h de antecedência</li>
+                            <li>• Especificar pauta e formato da entrevista</li>
+                            <li>• Respeitar os horários agendados</li>
+                            <li>• Seguir o protocolo de mesa de coletiva</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-vasco-gray py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="/api/placeholder/100/100" alt="Vasco Logo" class="w-24 mb-4">
+                    <p class="text-gray-400">Club de Regatas Vasco da Gama</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Clube</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#historia" class="text-gray-400 hover:text-white">História</a></li>
+                        <li><a href="index.html#titulos" class="text-gray-400 hover:text-white">Títulos</a></li>
+                        <li><a href="index.html#estadio" class="text-gray-400 hover:text-white">Estádio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Torcedor</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#socio" class="text-gray-400 hover:text-white">Sócio-Torcedor</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Ingressos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Loja Oficial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faleconosco.html" class="text-gray-400 hover:text-white">Fale Conosco</a></li>
+                        <li><a href="ouvidoria.html" class="text-gray-400 hover:text-white">Ouvidoria</a></li>
+                        <li><a href="imprensa.html" class="text-gray-400 hover:text-white">Imprensa</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2024 Club de Regatas Vasco da Gama. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+      
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            gsap.from(section.children, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "top 20%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+        });
+
+       
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>

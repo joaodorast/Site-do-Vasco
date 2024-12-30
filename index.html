@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasco da Gama - Gigante da Colina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        'vasco-black': '#000000',
+                        'vasco-white': '#FFFFFF',
+                        'vasco-red': '#CE1818',
+                        'vasco-gray': '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/hero-vasco.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .animate-slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .trophy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+  
+    <header class="fixed w-full z-50 bg-black/90 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="img/vasco.png" alt="Vasco Logo" class="w-12">
+                    <span class="text-2xl font-black">VASCO</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#historia" class="hover:text-vasco-red transition-colors">História</a>
+                    <a href="#titulos" class="hover:text-vasco-red transition-colors">Títulos</a>
+                    <a href="#estadio" class="hover:text-vasco-red transition-colors">Estádio</a>
+                    <a href="#socio" class="bg-vasco-red px-6 py-2 rounded-full hover:bg-red-700 transition-colors">
+                        Seja Sócio
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+   
+    <section class="hero-pattern min-h-screen flex items-center justify-center text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-6xl md:text-8xl font-black mb-6 animate-slide-up">GIGANTE DA COLINA</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-slide-up">Tradição, Paixão e Glória desde 1898</p>
+            <a href="#socio" class="inline-block bg-vasco-red px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors animate-slide-up">
+                FAÇA PARTE DA NOSSA HISTÓRIA
+            </a>
+        </div>
+    </section>
+
+   
+    <section id="historia" class="py-24 bg-vasco-gray">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-black mb-6">MAIS QUE UM CLUBE</h2>
+                    <p class="text-lg mb-6">Fundado em 1898 como um clube de remo, o Vasco da Gama se transformou em um dos maiores clubes do futebol brasileiro. Pioneiro na luta contra o preconceito, o Vasco tem uma história marcada por glórias e superação.</p>
+                    <p class="text-lg mb-8">Nossa torcida apaixonada, conhecida como a Maior do Mundo, é o coração pulsante que move este gigante.</p>
+                    <a href="#" class="text-vasco-red font-bold text-xl hover:underline">CONHEÇA NOSSA HISTÓRIA →</a>
+                </div>
+                <div>
+                    <img src="img/historiavasco.png" alt="História Vasco" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="titulos" class="py-24 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-black text-center mb-12">NOSSAS CONQUISTAS</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="trophy-card bg-vasco-gray p-8 rounded-xl transition-all duration-300">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold mb-2">Libertadores</h3>
+                    <p class="text-lg text-gray-300">1998</p>
+                </div>
+                <div class="trophy-card bg-vasco-gray p-8 rounded-xl transition-all duration-300">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold mb-2">Brasileiro</h3>
+                    <p class="text-lg text-gray-300">1974, 1989, 1997, 2000</p>
+                </div>
+                <div class="trophy-card bg-vasco-gray p-8 rounded-xl transition-all duration-300">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold mb-2">Copa do Brasil</h3>
+                    <p class="text-lg text-gray-300">2011</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="estadio" class="py-24 bg-vasco-gray">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="img/image.png" alt="São Januário" class="rounded-lg shadow-2xl">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-black mb-6">SÃO JANUÁRIO</h2>
+                    <p class="text-lg mb-6">Inaugurado em 1927, o Estádio São Januário é a casa do Vasco da Gama. Com capacidade para mais de 20 mil torcedores, é um dos estádios mais tradicionais do Brasil.</p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Capacidade</h4>
+                            <p class="text-lg">22.000 torcedores</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Inauguração</h4>
+                            <p class="text-lg">21/04/1927</p>
+                        </div>
+                    </div>
+                    <a href="conhecer.html" class="bg-vasco-red px-8 py-3 rounded-full inline-block hover:bg-red-700 transition-colors">
+                        CONHEÇA O ESTÁDIO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="socio" class="py-24 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-black mb-6">SEJA SÓCIO-TORCEDOR</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto">Faça parte do programa de sócio-torcedor do Vasco e tenha benefícios exclusivos, além de ajudar o clube a crescer ainda mais.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-vasco-gray p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4">PLANO COLINA</h3>
+                    <p class="text-4xl font-black mb-6">R$ 49,90<span class="text-lg font-normal">/mês</span></p>
+                    <ul class="text-left space-y-4 mb-8">
+                        <li>✓ Desconto em ingressos</li>
+                        <li>✓ Carteirinha digital</li>
+                        <li>✓ Newsletter exclusiva</li>
+                    </ul>
+                    <button class="w-full bg-vasco-red py-3 rounded-full hover:bg-red-700 transition-colors">
+                        ASSINAR
+                    </button>
+                </div>
+                <div class="bg-vasco-red p-8 rounded-xl transform scale-105">
+                    <h3 class="text-2xl font-bold mb-4">PLANO GIGANTE</h3>
+                    <p class="text-4xl font-black mb-6">R$ 99,90<span class="text-lg font-normal">/mês</span></p>
+                    <ul class="text-left space-y-4 mb-8">
+                        <li>✓ Prioridade em ingressos</li>
+                        <li>✓ Descontos exclusivos</li>
+                        <li>✓ Conteúdo premium</li>
+                        <li>✓ Eventos especiais</li>
+                    </ul>
+                    <button class="w-full bg-black py-3 rounded-full hover:bg-gray-900 transition-colors">
+                        ASSINAR
+                    </button>
+                </div>
+                <div class="bg-vasco-gray p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4">PLANO CRUZ DE MALTA</h3>
+                    <p class="text-4xl font-black mb-6">R$ 149,90<span class="text-lg font-normal">/mês</span></p>
+                    <ul class="text-left space-y-4 mb-8">
+                        <li>✓ Todos os benefícios anteriores</li>
+                        <li>✓ Acesso ao CT</li>
+                        <li>✓ Kit exclusivo</li>
+                        <li>✓ Encontro com jogadores</li>
+                    </ul>
+                    <button class="w-full bg-vasco-red py-3 rounded-full hover:bg-red-700 transition-colors">
+                        ASSINAR
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <footer class="bg-vasco-gray py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="img/vasco.png" alt="Vasco Logo" class="w-24 mb-4">
+                    <p class="text-gray-400">Club de Regatas Vasco da Gama</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Clube</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">História</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Títulos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Estádio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Torcedor</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sócio-Torcedor</a></li>
+                        <li><a href="ingressos.html" class="text-gray-400 hover:text-white">Ingressos</a></li>
+                        <li><a href="lojaofc.html" class="text-gray-400 hover:text-white">Loja Oficial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faleconosco.html" class="text-gray-400 hover:text-white">Fale Conosco</a></li>
+                        <li><a href="ouvidoria.html" class="text-gray-400 hover:text-white">Ouvidoria</a></li>
+                        <li><a href="imprensa.html" class="text-gray-400 hover:text-white">Imprensa</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2024 Club de Regatas Vasco da Gama. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        gsap.registerPlugin(ScrollTrigger);
+
+
+        gsap.from('.animate-slide-up', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+
+       
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            gsap.from(section.children, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "top 20%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+        });
+
+       
+        const trophyCards = document.querySelectorAll('.trophy-card');
+        trophyCards.forEach((card, index) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    end: "top 15%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                delay: index * 0.2,
+                ease: "power2.out"
+            });
+        });
+
+       
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80, 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+       
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>

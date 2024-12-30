@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credenciamento de Imprensa - Vasco da Gama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        'vasco-black': '#000000',
+                        'vasco-white': '#FFFFFF',
+                        'vasco-red': '#CE1818',
+                        'vasco-gray': '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white">
+    
+    <header class="fixed w-full z-50 bg-black/90 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html">
+                        <img src="/api/placeholder/50/50" alt="Vasco Logo" class="w-12">
+                    </a>
+                    <span class="text-2xl font-black">VASCO</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#historia" class="hover:text-vasco-red transition-colors">História</a>
+                    <a href="index.html#titulos" class="hover:text-vasco-red transition-colors">Títulos</a>
+                    <a href="index.html#estadio" class="hover:text-vasco-red transition-colors">Estádio</a>
+                    <a href="index.html#socio" class="bg-vasco-red px-6 py-2 rounded-full hover:bg-red-700 transition-colors">
+                        Seja Sócio
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24">
+       
+        <section class="py-16 bg-vasco-gray min-h-screen">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl font-black mb-6">CREDENCIAMENTO DE IMPRENSA</h1>
+                    <p class="text-xl mb-8">Preencha o formulário abaixo para solicitar seu credenciamento. Prazo mínimo de 48 horas de antecedência.</p>
+                    
+                    <form class="space-y-8" id="credentialForm">
+                        <!-- Dados Pessoais -->
+                        <div class="bg-black p-8 rounded-xl">
+                            <h2 class="text-2xl font-bold mb-6">Dados Pessoais</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="nome">Nome Completo *</label>
+                                    <input type="text" id="nome" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="cpf">CPF *</label>
+                                    <input type="text" id="cpf" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="rg">RG *</label>
+                                    <input type="text" id="rg" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="telefone">Telefone *</label>
+                                    <input type="tel" id="telefone" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-bold mb-2" for="email">E-mail *</label>
+                                    <input type="email" id="email" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                            </div>
+                        </div>
+
+                     
+                        <div class="bg-black p-8 rounded-xl">
+                            <h2 class="text-2xl font-bold mb-6">Dados Profissionais</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="veiculo">Veículo de Comunicação *</label>
+                                    <input type="text" id="veiculo" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="cargo">Cargo/Função *</label>
+                                    <input type="text" id="cargo" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="registro">Registro Profissional</label>
+                                    <input type="text" id="registro"
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="tipo">Tipo de Mídia *</label>
+                                    <select id="tipo" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                        <option value="">Selecione</option>
+                                        <option value="jornal">Jornal</option>
+                                        <option value="web">Web</option>
+                                        <option value="radio">Rádio</option>
+                                        <option value="tv">TV</option>
+                                        <option value="foto">Fotografia</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="bg-black p-8 rounded-xl">
+                            <h2 class="text-2xl font-bold mb-6">Dados do Evento</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="evento">Evento *</label>
+                                    <select id="evento" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                        <option value="">Selecione</option>
+                                        <option value="jogo">Jogo</option>
+                                        <option value="treino">Treino</option>
+                                        <option value="coletiva">Coletiva de Imprensa</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold mb-2" for="data">Data do Evento *</label>
+                                    <input type="date" id="data" required
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-bold mb-2" for="observacoes">Observações</label>
+                                    <textarea id="observacoes" rows="4"
+                                        class="w-full bg-vasco-gray rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-vasco-red"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-black p-8 rounded-xl">
+                            <div class="flex items-start mb-6">
+                                <input type="checkbox" id="termos" required class="mt-1">
+                                <label for="termos" class="ml-2 text-sm">
+                                    Declaro que li e aceito os termos e condições para credenciamento de imprensa do Club de Regatas Vasco da Gama *
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end space-x-4">
+                            <button type="button" onclick="window.history.back()" 
+                                class="px-8 py-3 rounded-full bg-vasco-gray hover:bg-gray-700 transition-colors">
+                                CANCELAR
+                            </button>
+                            <button type="submit" 
+                                class="px-8 py-3 rounded-full bg-vasco-red hover:bg-red-700 transition-colors">
+                                ENVIAR SOLICITAÇÃO
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-vasco-gray py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="/api/placeholder/100/100" alt="Vasco Logo" class="w-24 mb-4">
+                    <p class="text-gray-400">Club de Regatas Vasco da Gama</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Clube</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#historia" class="text-gray-400 hover:text-white">História</a></li>
+                        <li><a href="index.html#titulos" class="text-gray-400 hover:text-white">Títulos</a></li>
+                        <li><a href="index.html#estadio" class="text-gray-400 hover:text-white">Estádio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Torcedor</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#socio" class="text-gray-400 hover:text-white">Sócio-Torcedor</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Ingressos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Loja Oficial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faleconosco.html" class="text-gray-400 hover:text-white">Fale Conosco</a></li>
+                        <li><a href="ouvidoria.html" class="text-gray-400 hover:text-white">Ouvidoria</a></li>
+                        <li><a href="imprensa.html" class="text-gray-400 hover:text-white">Imprensa</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2024 Club de Regatas Vasco da Gama. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+     
+        document.getElementById('credentialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.innerHTML = 'PROCESSANDO...';
+            submitButton.disabled = true;
+            
+         
+            setTimeout(() => {
+                alert('Solicitação enviada com sucesso! Entraremos em contato em até 24 horas.');
+                submitButton.innerHTML = 'ENVIAR SOLICITAÇÃO';
+                submitButton.disabled = false;
+            }, 2000);
+        });
+
+        
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
