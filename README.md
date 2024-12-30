@@ -75,7 +75,7 @@ Para contribuir, siga estas etapas:
 ## Contato  
 
 Caso tenha dúvidas, sugestões ou problemas, entre em contato:  
-- **Email**: [seuemail@exemplo.com](mailto:joaopedrosantosesilva13@gmail.com)  
+- **Email**: [joaopedrosantosesilva13@gmail.com](mailto:joaopedrosantosesilva13@gmail.com)  
 - **GitHub**: [@joaodorast](https://github.com/joaodorast)  
 
 ---
