@@ -25,10 +25,10 @@ Este projeto tem como objetivo criar um site para o Vasco da Gama. Atualmente, o
 
 Para clonar este repositório, siga os passos abaixo:
 
-```bash
-# Clone o repositório
-git clone https://github.com/joaodorast/Site-do-Vasco.git
-```
+ Clone o repositório:
+    ```bash
+    git clone https://github.com/joaodorast/Dashboard-de-Administra-o.git
+    ```
 ```
 # Navegue até o diretório do projeto
 cd Site-do-Vasco
