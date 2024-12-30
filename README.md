@@ -3,6 +3,7 @@
 # Site do Vasco
 
 
+
 Este é o repositório do Site do Vasco. O site foi desenvolvido utilizando as seguintes tecnologias:
 
 - **HTML**
@@ -48,5 +49,3 @@ O site ainda está em desenvolvimento e não está completo. Novas funcionalidad
 
 Para mais informações, entre em contato através do e-mail: [joaopedrosantosesilva13@gmail.com](mailto:joaopedrosantosesilva13@gmail.com).
 ```
-
-
