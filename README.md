@@ -81,5 +81,5 @@ Caso tenha dúvidas, sugestões ou problemas, entre em contato:
 ---
 
 **Nota**: Este site não possui vínculo oficial com o Club de Regatas Vasco da Gama. Ele é desenvolvido apenas para fins educativos e de entretenimento.  
-```  
+  
 
