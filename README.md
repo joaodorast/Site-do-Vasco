@@ -4,8 +4,7 @@
 # Site do Vasco  
 
 Este repositório contém o código-fonte para o site dedicado ao Vasco da Gama.  
-O objetivo é criar uma plataforma informativa com foco nas contratações, visão geral do clube e um design que destaca de
-destaque no background.  
+O objetivo é criar uma plataforma informativa com foco nas contratações, visão geral do clube e um design que destaca as cores de cruz e malta no background.  
 
 ## Tecnologias Utilizadas  
 
