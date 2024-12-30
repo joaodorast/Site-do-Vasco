@@ -1,4 +1,4 @@
-
+Claro! Abaixo está o `README.md` atualizado com a imagem do logo do Vasco da Gama. Eu também incluí o código para clonar o repositório e o seu e-mail de contato.
 
 ```markdown
 # Site do Vasco
@@ -53,4 +53,4 @@ O site ainda está em desenvolvimento e não está completo. Novas funcionalidad
 Para mais informações, entre em contato através do e-mail: [joaopedrosantosesilva13@gmail.com](mailto:joaopedrosantosesilva13@gmail.com).
 ```
 
-Sinta-se à vontade para modificar este `README.md` conforme necessário.
+Caso a imagem ainda não apareça, por favor, verifique a URL da imagem para garantir que está correta e acessível.
